@@ -140,7 +140,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
              taskArray = realm.objects(Task.self).sorted(byKeyPath: "date", ascending: false)
             
         }else{
-             taskArray = realm.objects(Task.self).filter("name BEGINSWITH %@", searchText).sorted(byKeyPath: "date", ascending: false)
+             taskArray = realm.objects(Task.self).filter("category BEGINSWITH %@", searchText).sorted(byKeyPath: "date", ascending: false)
         }
         //Tableを再読み込み
         tableView.reloadData()
